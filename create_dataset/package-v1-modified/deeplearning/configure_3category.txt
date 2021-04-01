@@ -1,0 +1,37 @@
+x_file: /home2/twang6/projects/imageAnalysis/data/data_x.txt
+y_file: /home2/twang6/projects/imageAnalysis/data/data_y.txt
+save_file: save/CNN
+dimensionality: 80 80 3
+normalize: local_contrast_normalization 8
+batch_size: 10
+thread: 40
+cycle(report): 20000 100
+mm: 0.9
+decay: 0.0001
+rate: 0.01
+proportion: 0.99
+rate_decay: 0.99995
+rate_lower: 0.0001
+illuminate: 0
+mirror: 1
+rotate: 1
+translate: 0
+tilt: 0
+p: 0.5
+limit: 0.5
+convolutional_Layer
+78 78 20 r 0
+subsampling_Layer
+26 26 20 r max
+convolutional_Layer
+24 24 20 r 0
+subsampling_Layer
+8 8 20 r max
+convolutional_Layer
+6 6 20 r 0
+subsampling_Layer
+2 2 20 r max
+vanilla_Layer
+20 r 1000 0.8
+output_Layer
+3 cross
